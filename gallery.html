@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | PM SHRI GSS MUS</title>
+  <meta name="description" content="Photo and video gallery concept for PM SHRI GSS MUS school events, activities, facilities, and student life.">
+  <link rel="icon" href="assets/crest.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="top-strip">
+      <p>PM SHRI GSS MUS</p>
+      <div class="top-links" aria-label="School contact quick links">
+        <a href="tel:+910000000000">+91 00000 00000</a>
+        <a href="mailto:info@pmshrigssmus.edu.in">info@pmshrigssmus.edu.in</a>
+        <span>MUS, India</span>
+      </div>
+    </div>
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="PM SHRI GSS MUS home">
+        <img src="assets/crest.svg" alt="" width="56" height="56">
+        <span><strong>PM SHRI GSS MUS</strong><small>Learning with values</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+        <span class="toggle-bars" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+      <ul class="nav-menu" id="site-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">School History</a></li>
+        <li><a href="staff.html">School Staff</a></li>
+        <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+        <li><a href="houses.html">School Houses</a></li>
+        <li><a class="nav-cta" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero gallery-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">School Life</p>
+          <h1>Moments from our campus</h1>
+          <p>Our gallery reflects the energy, creativity, discipline, and joy of PM SHRI GSS MUS through events, activities, facilities, and everyday learning.</p>
+        </div>
+        <div class="gallery-preview" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="gallery-toolbar" aria-label="Gallery categories">
+          <button class="tab-button active" type="button" data-gallery-filter="all">All</button>
+          <button class="tab-button" type="button" data-gallery-filter="campus">Campus</button>
+          <button class="tab-button" type="button" data-gallery-filter="classroom">Classroom</button>
+          <button class="tab-button" type="button" data-gallery-filter="sports">Sports</button>
+          <button class="tab-button" type="button" data-gallery-filter="culture">Culture</button>
+          <button class="tab-button" type="button" data-gallery-filter="events">Events</button>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-card large photo-campus" data-gallery-item="campus">
+            <img src="assets/hero-campus.png" alt="Students and teachers on the school campus">
+            <figcaption><strong>School Campus</strong><span>A welcoming environment for learning and growth.</span></figcaption>
+          </figure>
+          <figure class="gallery-card visual-card classroom" data-gallery-item="classroom">
+            <div class="visual-scene" aria-hidden="true"></div>
+            <figcaption><strong>Classroom Activities</strong><span>Students learn through discussion, practice, and guidance.</span></figcaption>
+          </figure>
+          <figure class="gallery-card visual-card sports" data-gallery-item="sports">
+            <div class="visual-scene" aria-hidden="true"></div>
+            <figcaption><strong>Sports Events</strong><span>Fitness, teamwork, discipline, and healthy competition.</span></figcaption>
+          </figure>
+          <figure class="gallery-card visual-card culture" data-gallery-item="culture">
+            <div class="visual-scene" aria-hidden="true"></div>
+            <figcaption><strong>Cultural Programs</strong><span>Creativity and confidence on stage.</span></figcaption>
+          </figure>
+          <figure class="gallery-card visual-card events" data-gallery-item="events">
+            <div class="visual-scene" aria-hidden="true"></div>
+            <figcaption><strong>National Days</strong><span>Celebrations that build pride and unity.</span></figcaption>
+          </figure>
+          <figure class="gallery-card visual-card campus" data-gallery-item="campus">
+            <div class="visual-scene" aria-hidden="true"></div>
+            <figcaption><strong>Green Campus</strong><span>Cleanliness, plantation, and environmental awareness.</span></figcaption>
+          </figure>
+          <figure class="gallery-card video-card" data-gallery-item="events">
+            <button class="play-button" type="button" aria-label="Play annual day video preview"></button>
+            <figcaption><strong>Annual Day Video</strong><span>A video space for performances, speeches, and highlights.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery image preview" hidden>
+      <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
+      <div class="lightbox-content"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div><a class="footer-brand" href="index.html"><img src="assets/crest.svg" alt="" width="48" height="48"><span>PM SHRI GSS MUS</span></a><p>A welcoming school community committed to learning, discipline, values, and growth.</p></div>
+      <div><h2>Quick Links</h2><a href="index.html">Home</a><a href="history.html">School History</a><a href="staff.html">School Staff</a><a href="houses.html">School Houses</a></div>
+      <div><h2>Contact</h2><p>Address: PM SHRI GSS MUS, MUS, India</p><p>Phone: +91 00000 00000</p><p>Email: info@pmshrigssmus.edu.in</p></div>
+      <div><h2>Connect</h2><a href="#">Facebook</a><a href="#">Instagram</a><a href="#">YouTube</a></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2026 PM SHRI GSS MUS. All rights reserved.</p></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
