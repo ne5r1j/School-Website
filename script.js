@@ -63,16 +63,14 @@ if (lightbox && lightboxContent && lightboxClose) {
   document.querySelectorAll(".gallery-card").forEach((card) => {
     card.addEventListener("click", () => {
       const image = card.querySelector("img");
-      const visual = card.querySelector(".visual-scene");
       const caption = card.querySelector("figcaption")?.cloneNode(true);
 
       lightboxContent.innerHTML = "";
       if (image) {
         const preview = image.cloneNode(true);
         preview.alt = image.alt;
+        preview.loading = "eager";
         lightboxContent.append(preview);
-      } else if (visual) {
-        lightboxContent.append(visual.cloneNode(true));
       } else {
         const videoMessage = document.createElement("div");
         videoMessage.className = "video-placeholder";
