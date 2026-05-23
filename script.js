@@ -21,6 +21,7 @@ if (navToggle && navMenu) {
 function setupFilter(buttonSelector, itemSelector, attributeName) {
   const buttons = Array.from(document.querySelectorAll(buttonSelector));
   const items = Array.from(document.querySelectorAll(itemSelector));
+  const itemAttribute = itemSelector.match(/\[data-([^\]]+)\]/)?.[1];
 
   if (!buttons.length || !items.length) return;
 
@@ -29,7 +30,7 @@ function setupFilter(buttonSelector, itemSelector, attributeName) {
       const filter = button.dataset[attributeName];
       buttons.forEach((current) => current.classList.toggle("active", current === button));
       items.forEach((item) => {
-        const value = item.dataset[attributeName.replace("Filter", "Item")] || item.dataset.department;
+        const value = itemAttribute ? item.dataset[itemAttribute.replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())] : "";
         const show = filter === "all" || value === filter;
         item.hidden = !show;
       });

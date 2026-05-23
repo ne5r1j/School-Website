@@ -41,6 +41,10 @@ img {
   display: block;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -113,9 +117,22 @@ h3 {
   font-size: 0.88rem;
 }
 
-.top-strip p {
+.school-codes {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.school-codes strong,
+.school-codes span {
   margin: 0;
   font-weight: 700;
+}
+
+.school-codes span {
+  text-transform: uppercase;
 }
 
 .top-links {
@@ -429,6 +446,57 @@ h3 {
   color: var(--muted);
 }
 
+.mission-vision-section {
+  background: var(--white);
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.mission-card {
+  min-height: 100%;
+  padding: 1.45rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--blue);
+  background: var(--paper);
+  box-shadow: 0 12px 30px rgba(10, 41, 66, 0.08);
+}
+
+.mission-card.vision {
+  border-top-color: var(--green);
+}
+
+.mission-label {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  margin-bottom: 0.9rem;
+  padding: 0 0.75rem;
+  border-radius: var(--radius);
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.mission-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+}
+
+.mission-card p {
+  color: var(--muted);
+}
+
+.mission-card p:last-child {
+  margin-bottom: 0;
+}
+
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -710,6 +778,66 @@ blockquote {
   color: var(--navy);
 }
 
+.staff-structure-card {
+  display: grid;
+  gap: 1.1rem;
+  align-content: center;
+  padding: 1.35rem;
+}
+
+.staff-structure-card h2 {
+  margin-top: 0.25rem;
+  font-size: 1.45rem;
+}
+
+.staff-structure-card dl {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+}
+
+.staff-structure-card dl div {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  gap: 0.85rem;
+  align-items: center;
+  min-height: 62px;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.staff-structure-card dt {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 42px;
+  border-radius: var(--radius);
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 900;
+}
+
+.staff-structure-card dl div:nth-child(2) dt {
+  background: var(--green);
+}
+
+.staff-structure-card dl div:nth-child(3) dt {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.staff-structure-card dl div:nth-child(4) dt {
+  background: var(--blue);
+}
+
+.staff-structure-card dd {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 800;
+}
+
 .values-panel {
   padding: 1.4rem;
 }
@@ -825,6 +953,32 @@ blockquote {
   padding: 1.2rem;
 }
 
+.staff-card.compact {
+  min-height: 172px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 112px;
+  grid-template-areas:
+    "name photo"
+    "role photo";
+  gap: 0.6rem 1rem;
+  align-items: center;
+}
+
+.staff-card.compact h3 {
+  grid-area: name;
+  align-self: end;
+}
+
+.staff-card.compact .staff-role {
+  grid-area: role;
+  align-self: start;
+}
+
+.staff-card.compact .staff-photo {
+  grid-area: photo;
+  justify-self: end;
+}
+
 .staff-card:not(.compact) {
   display: grid;
   grid-template-columns: 92px 1fr;
@@ -837,10 +991,27 @@ blockquote {
   height: 72px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
+  border-radius: var(--radius);
   background: linear-gradient(135deg, var(--blue), var(--green));
   color: var(--white);
   font-weight: 900;
+  overflow: hidden;
+}
+
+.staff-card.compact .staff-photo {
+  width: 112px;
+  height: 140px;
+  overflow: hidden;
+  padding: 0.7rem;
+  border: 1px solid rgba(10, 41, 66, 0.12);
+  background: var(--white);
+  box-shadow: 0 10px 22px rgba(10, 41, 66, 0.16);
+}
+
+.staff-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .staff-card:not(.compact) .staff-photo {
@@ -1169,6 +1340,10 @@ blockquote {
   margin-bottom: 0.5rem;
 }
 
+.house-header h3 {
+  flex: 1;
+}
+
 .house-color {
   width: 28px;
   height: 28px;
@@ -1186,6 +1361,17 @@ blockquote {
 
 .house-red .house-color {
   background: var(--red);
+}
+
+.house-portrait {
+  width: 76px;
+  height: 76px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 3px solid var(--white);
+  box-shadow: 0 8px 18px rgba(10, 41, 66, 0.16);
 }
 
 .motto {
@@ -1322,6 +1508,7 @@ blockquote {
 
   .feature-grid,
   .staff-grid,
+  .mission-vision-grid,
   .achievement-grid,
   .footer-grid,
   .gallery-grid {
@@ -1384,6 +1571,7 @@ blockquote {
   .feature-grid,
   .staff-grid,
   .leadership-grid,
+  .mission-vision-grid,
   .achievement-grid,
   .footer-grid,
   .gallery-grid,
@@ -1414,11 +1602,26 @@ blockquote {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .house-portrait {
+    width: 62px;
+    height: 62px;
+  }
+
   .staff-card:not(.compact) {
     grid-template-columns: 1fr;
   }
 
   .house-card dl {
     grid-template-columns: 1fr;
+  }
+
+  .staff-card.compact {
+    min-height: 132px;
+    grid-template-columns: minmax(0, 1fr) 82px;
+  }
+
+  .staff-card.compact .staff-photo {
+    width: 82px;
+    height: 104px;
   }
 }
