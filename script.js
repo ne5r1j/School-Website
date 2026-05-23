@@ -34,12 +34,26 @@ function setupFilter(buttonSelector, itemSelector, attributeName) {
         const show = filter === "all" || value === filter;
         item.hidden = !show;
       });
+      if (itemSelector === "[data-gallery-item]") {
+        document.querySelector(".gallery-slider-track")?.scrollTo({ left: 0, behavior: "smooth" });
+      }
     });
   });
 }
 
 setupFilter("[data-gallery-filter]", "[data-gallery-item]", "galleryFilter");
 setupFilter("[data-staff-filter]", "[data-department]", "staffFilter");
+
+const gallerySlider = document.querySelector(".gallery-slider-track");
+
+if (gallerySlider) {
+  document.querySelectorAll("[data-gallery-slide]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = button.dataset.gallerySlide === "next" ? 1 : -1;
+      gallerySlider.scrollBy({ left: direction * gallerySlider.clientWidth * 0.82, behavior: "smooth" });
+    });
+  });
+}
 
 const lightbox = document.querySelector("#lightbox");
 const lightboxContent = document.querySelector(".lightbox-content");
